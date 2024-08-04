@@ -41,6 +41,7 @@ module.exports = {
     'react-native/sort-styles': 'off',
     '@typescript-eslint/no-confusing-void-expression': 'off',
     'no-console': 'off',
+    'react-native/no-raw-text': 'off',
   },
   settings: {
     react: {
