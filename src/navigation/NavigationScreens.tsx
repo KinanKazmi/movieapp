@@ -1,7 +1,6 @@
-import type { RootStackParamList } from './StackScreenList';
 import React from 'react';
 import { StatusBar, useColorScheme } from 'react-native';
-import { screens, Stack } from './StackScreenList';
+import { opt, components, Stack } from './StackScreenList';
 import theme from '../theme';
 
 export default function NavigationScreens() {
@@ -15,14 +14,22 @@ export default function NavigationScreens() {
         }
       />
       <Stack.Navigator>
-        {screens.map((screen) => (
-          <Stack.Screen
-            key={screen.name}
-            name={screen.name as keyof RootStackParamList}
-            component={screen.component}
-            {...screen.options}
-          />
-        ))}
+        <Stack.Screen name={'Home'} component={components.Home} {...opt} />
+        <Stack.Screen
+          name={'SearchPage'}
+          component={components.SearchPage}
+          {...opt}
+        />
+        <Stack.Screen
+          name={'MovieDetail'}
+          component={components.MovieDetail}
+          {...opt}
+        />
+        <Stack.Screen
+          name={'VideoPlayer'}
+          component={components.VideoPlayer}
+          {...opt}
+        />
       </Stack.Navigator>
     </>
   );

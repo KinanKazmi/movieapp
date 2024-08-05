@@ -1,4 +1,4 @@
-import type { UpcomingResult } from '../../redux/apiTypes';
+import type { MovieType } from '../../redux/apiTypes';
 import type { NavigationProp } from '@react-navigation/native';
 import React from 'react';
 import { FlatList, StatusBar } from 'react-native';
@@ -13,9 +13,9 @@ import { useNavigation } from '@react-navigation/native';
 const Watch = () => {
   const { data, isLoading } = useFetchUpcomingQuery();
   const navigation =
-    useNavigation<NavigationProp<{ MovieDetail: { movie: UpcomingResult } }>>();
+    useNavigation<NavigationProp<{ MovieDetail: { movie: MovieType } }>>();
 
-  const onImagePress = (item: UpcomingResult) => {
+  const onImagePress = (item: MovieType) => {
     navigation.navigate('MovieDetail', { movie: item });
   };
 

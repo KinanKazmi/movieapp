@@ -42,6 +42,7 @@ module.exports = {
     '@typescript-eslint/no-confusing-void-expression': 'off',
     'no-console': 'off',
     'react-native/no-raw-text': 'off',
+    '@typescript-eslint/no-invalid-void-type': 'off',
   },
   settings: {
     react: {

@@ -1,4 +1,4 @@
-import type { UpcomingResult } from '../../redux/apiTypes';
+import type { MovieType } from '../../redux/apiTypes';
 import React from 'react';
 import { ImageWrapper, MovieTitleText, PosterImage } from './styles';
 import { appFonts } from '../../theme';
@@ -8,7 +8,7 @@ const MainListItem = ({
   item,
   onPress,
 }: {
-  item: UpcomingResult;
+  item: MovieType;
   onPress: () => void;
 }) => {
   const imagePath = getMovieImageUrl(item.backdrop_path);

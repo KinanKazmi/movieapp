@@ -1,10 +1,12 @@
+import type { NavigationProp } from '@react-navigation/native';
+import type { RootStackParamList } from '../../navigation/StackScreenList';
+
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
-import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { WatchHeaderContainer, WatchHeaderContainerInner } from './styled';
 import { IconImage } from '../../sharedStyles';
 import { appFonts } from '../../theme';
-import { RootStackParamList } from '../../navigation/StackScreenList';
 import SearchIcon from '../../assets/icons/SearchIcon.png';
 
 const WatchHeader = () => {

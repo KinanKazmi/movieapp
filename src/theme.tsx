@@ -16,6 +16,7 @@ const theme = {
     blackLight: '#202C434D',
     searchBarBG: '#F2F2F6',
     borderGray: '#EFEFEF',
+    overviewColor: '#8F8F8F',
   },
   fonts: {
     black: 'Poppins-Black',
