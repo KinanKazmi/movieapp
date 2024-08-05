@@ -40,17 +40,23 @@ export const GenreView = ({
   genre: string;
   color: string;
 }) => {
-  const GenreBox = styled.Text`
-    fontSize: 12px;
-    fontFamily: ${theme.fonts.bold};
-    color: ${theme.colors.white};
+  const GenreContainer = styled.View`
     backgroundColor: ${color};
     borderRadius: 20px;
     paddingHorizontal: 10px;
     marginRight: 10px;
     paddingVertical: 1px;
   `;
-  return <GenreBox>{genre}</GenreBox>;
+  const GenreText = styled.Text`
+    fontSize: 12px;
+    fontFamily: ${theme.fonts.bold};
+    color: ${theme.colors.white};
+  `;
+  return (
+    <GenreContainer>
+      <GenreText>{genre}</GenreText>
+    </GenreContainer>
+  );
 };
 
 export const GenreSection = () => {

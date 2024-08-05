@@ -75,6 +75,7 @@ export const CustomButton = ({
 
 const BackContainer = styled.TouchableOpacity<{ absolute?: boolean }>`
   zIndex: 2;
+  left: ${(props) => (props.absolute ? '20px' : 'undefined')};
   position: ${(props) => (props.absolute ? 'absolute' : 'relative')};
   marginTop: ${(props) => (props.absolute ? 0 : responsiveHeight(5))}px;
   flexDirection: row;
