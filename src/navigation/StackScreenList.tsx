@@ -6,12 +6,14 @@ import Home from '../views/Home';
 import SearchPage from '../views/SearchPage';
 import MovieDetail from '../views/MovieDetail';
 import VideoPlayer from '../views/VideoPlayer';
+import GetSeat from '../views/GetSeat';
 
 export type RootStackParamList = {
   Home: undefined;
   SearchPage: undefined;
   MovieDetail: { movie: MovieType };
   VideoPlayer: { video: Video | undefined };
+  GetSeat: undefined;
 };
 
 export const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -28,4 +30,5 @@ export const components = {
   SearchPage: SearchPage,
   MovieDetail: MovieDetail,
   VideoPlayer: VideoPlayer,
+  GetSeat: GetSeat,
 };

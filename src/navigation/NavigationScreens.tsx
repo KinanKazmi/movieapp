@@ -30,6 +30,11 @@ export default function NavigationScreens() {
           component={components.VideoPlayer}
           {...opt}
         />
+        <Stack.Screen
+          name={'GetSeat'}
+          component={components.GetSeat}
+          {...opt}
+        />
       </Stack.Navigator>
     </>
   );

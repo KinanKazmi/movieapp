@@ -17,6 +17,7 @@ const theme = {
     searchBarBG: '#F2F2F6',
     borderGray: '#EFEFEF',
     overviewColor: '#8F8F8F',
+    bookedSeat: '#A6A6A6',
   },
   fonts: {
     black: 'Poppins-Black',
@@ -55,40 +56,10 @@ export const appFonts = {
     fontFamily: theme.fonts.medium,
     color: theme.colors.white,
   } as TextStyle,
-  searchPlaceHolder: {
-    fontSize: 16,
-    fontFamily: theme.fonts.regular,
-    color: theme.colors.blackLight,
-  } as TextStyle,
   movieCategory: {
     fontSize: 16,
     fontFamily: theme.fonts.medium,
     color: theme.colors.white,
-  } as TextStyle,
-  searchInput: {
-    fontSize: 14,
-    fontFamily: theme.fonts.regular,
-    color: theme.colors.black,
-  } as TextStyle,
-  searchHeading: {
-    fontSize: 12,
-    fontFamily: theme.fonts.medium,
-    color: theme.colors.black,
-  } as TextStyle,
-  searchListMovieTitle: {
-    fontSize: 16,
-    fontFamily: theme.fonts.medium,
-    color: theme.colors.black,
-  } as TextStyle,
-  searchListMovieCategory: {
-    fontSize: 12,
-    fontFamily: theme.fonts.medium,
-    color: theme.colors.lightGray,
-  } as TextStyle,
-  searchResultsText: {
-    fontSize: 16,
-    fontFamily: theme.fonts.medium,
-    color: theme.colors.black,
   } as TextStyle,
 };
 

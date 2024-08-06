@@ -4,7 +4,7 @@ import type { RootStackParamList } from '../../navigation/StackScreenList';
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { WatchHeaderContainer, WatchHeaderContainerInner } from './styled';
+import { WatchHeaderContainer, WatchHeaderContainerInner } from './styles';
 import { IconImage } from '../../sharedStyles';
 import { appFonts } from '../../theme';
 import SearchIcon from '../../assets/icons/SearchIcon.png';

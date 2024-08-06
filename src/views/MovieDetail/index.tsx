@@ -51,6 +51,10 @@ const MovieDetail = ({
     navigation.navigate('VideoPlayer', { video: trailer });
   };
 
+  const onGetSeat = () => {
+    navigation.navigate('GetSeat');
+  };
+
   return (
     <GenericSafeArea>
       <StatusBar hidden={false} />
@@ -61,7 +65,7 @@ const MovieDetail = ({
           {`In theaters ${dateString}`}
         </ReleaseDate>
         <Spacer vertical={0.25} />
-        <CustomButton filled>
+        <CustomButton filled onPress={onGetSeat}>
           <GenericText style={appFonts.movieCategory}>
             {'Get Tickets'}
           </GenericText>

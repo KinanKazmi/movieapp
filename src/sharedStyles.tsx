@@ -73,38 +73,60 @@ export const CustomButton = ({
   return <StyledButton {...props}>{children}</StyledButton>;
 };
 
-const BackContainer = styled.TouchableOpacity<{ absolute?: boolean }>`
+const BackContainer = styled.TouchableOpacity<{
+  absolute?: boolean;
+  noMargin?: boolean;
+}>`
   zIndex: 2;
   left: ${(props) => (props.absolute ? '20px' : 'undefined')};
   position: ${(props) => (props.absolute ? 'absolute' : 'relative')};
-  marginTop: ${(props) => (props.absolute ? 0 : responsiveHeight(5))}px;
+  marginTop: ${(props) =>
+    props.absolute ?? props.noMargin ? 0 : responsiveHeight(5)}px;
   flexDirection: row;
-  alignItems: center;
 `;
 
 const BackText = styled.Text`
   alignSelf: center;
+  top: 1.5px;
 `;
 
 const BackImage = styled.Image`
-  width: ${responsiveWidth(8)}px;
-  height: ${responsiveWidth(8)}px;
-  marginRight: ${responsiveWidth(1)}px;
+  alignSelf: center;
+  width: 30px;
+  height: 30px;
+  marginRight: ${responsiveWidth(2)}px;
 `;
 
 export const BackWithText = ({
   onPress,
   text,
   absolute,
+  dark,
+  noMargin,
 }: {
+  dark?: boolean;
+  noMargin?: boolean;
   absolute?: boolean;
   onPress: () => void;
-  text: string;
+  text?: string;
 }) => {
   return (
-    <BackContainer onPress={onPress} absolute={absolute}>
-      <BackImage resizeMode="contain" source={BackIcon} />
-      <BackText style={appFonts.movieCategory}>{text}</BackText>
+    <BackContainer onPress={onPress} absolute={absolute} noMargin={noMargin}>
+      <BackImage
+        resizeMode="contain"
+        source={BackIcon}
+        tintColor={dark ? theme.colors.black : undefined}
+      />
+      {text && (
+        <BackText
+          style={[
+            appFonts.movieCategory,
+            dark && { color: theme.colors.black },
+          ]}
+        >
+          {text}
+        </BackText>
+      )}
     </BackContainer>
   );
 };
