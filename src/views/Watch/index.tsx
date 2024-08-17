@@ -1,14 +1,15 @@
 import type { MovieType } from '../../redux/apiTypes';
 import type { NavigationProp } from '@react-navigation/native';
 import React from 'react';
-import { FlatList, StatusBar } from 'react-native';
 import WatchHeader from '../../components/WatchHeader';
 import { flatListContantContainer, WatchContainer } from './styles';
-import theme from '../../theme';
 import { useFetchUpcomingQuery } from '../../redux/apis';
 import { Loader } from '../../components/Loader';
 import MainListItem from './MainListItem';
 import { useNavigation } from '@react-navigation/native';
+import { CollapsibleHeaderFlatList } from 'react-native-collapsible-header-views';
+import { responsiveHeight } from 'react-native-responsive-dimensions';
+import { StatusBar } from 'react-native';
 
 const Watch = () => {
   const { data, isLoading } = useFetchUpcomingQuery();
@@ -21,21 +22,20 @@ const Watch = () => {
 
   return (
     <>
-      <StatusBar
-        barStyle={'dark-content'}
-        backgroundColor={theme.colors.white}
-      />
       <WatchContainer>
-        <WatchHeader />
         {isLoading ? (
           <Loader />
         ) : (
-          <FlatList
-            contentContainerStyle={flatListContantContainer}
+          <CollapsibleHeaderFlatList
+            CollapsibleHeaderComponent={() => <WatchHeader />}
+            headerHeight={responsiveHeight(10)}
             data={data?.results}
+            keyExtractor={(item: MovieType) => item.id.toString()}
             renderItem={({ item }) => (
               <MainListItem item={item} onPress={() => onImagePress(item)} />
             )}
+            contentContainerStyle={flatListContantContainer}
+            disableHeaderSnap={false}
           />
         )}
       </WatchContainer>
