@@ -26,13 +26,10 @@ const MovieDetail = ({
 }) => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
   const { movie } = route.params;
-  const { original_title, poster_path } = movie;
-  const tempImagePath = getMovieImageUrl(poster_path);
   const imagePath = getMovieImageUrl(movie.backdrop_path);
-  const { data, isLoading } = useFetchMovieVideoQuery({
+  const { data } = useFetchMovieVideoQuery({
     movie_id: movie.id.toString(),
   });
-  console.log('data', data);
   const trailer = data?.results.find(
     (item) =>
       item.type === 'Trailer' &&
@@ -61,7 +58,7 @@ const MovieDetail = ({
   return (
     <GenericSafeArea>
       <StatusBar hidden={false} />
-      <PosterImage source={{ uri: isLoading ? tempImagePath : imagePath }}>
+      <PosterImage source={{ uri: imagePath }}>
         <BackWithText onPress={onBack} text={'Watch'} />
         <Spacer vertical={10} />
         <ReleaseDate style={appFonts.movieCategory}>
