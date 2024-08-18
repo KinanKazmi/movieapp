@@ -9,7 +9,6 @@ import MainListItem from './MainListItem';
 import { useNavigation } from '@react-navigation/native';
 import { CollapsibleHeaderFlatList } from 'react-native-collapsible-header-views';
 import { responsiveHeight } from 'react-native-responsive-dimensions';
-import { StatusBar } from 'react-native';
 
 const Watch = () => {
   const { data, isLoading } = useFetchUpcomingQuery();
